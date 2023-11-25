@@ -12,10 +12,5 @@
     "baseUrl": "./",
     "incremental": true,
     "skipLibCheck": true,
-    "paths": {
-      "@root/*": [
-        "./src/*"
-      ]
-    }
   }
 }

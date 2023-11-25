@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import getStaticPath from 'src/utils/getStaticPath';
-import readFileAsync from 'src/utils/readFileAsync';
+import getStaticPath from '@root/utils/getStaticPath';
+import readFileAsync from '@root/utils/readFileAsync';
 
 @Injectable()
 export class PricesService {

@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Query } from '@nestjs/common';
 import { PricesService } from './prices.service';
 import { ApiTags } from '@nestjs/swagger';
 
@@ -6,12 +6,8 @@ import { ApiTags } from '@nestjs/swagger';
 @ApiTags('prices')
 export class PricesController {
   constructor(private readonly usersService: PricesService) {}
-  @Get('test')
-  test() {
-    return this.usersService.getFile();
-  }
-  @Get(':item')
-  findOne(@Param('item') item: string) {
-    return this.usersService.getPrice(item);
+  @Get()
+  getLocalPrice(@Query('product') product: string) {
+    return this.usersService.getLocalPrice({ product });
   }
 }

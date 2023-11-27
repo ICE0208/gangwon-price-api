@@ -120,10 +120,8 @@ console.log(fakeData);
 
 const jsonContent = JSON.stringify(fakeData, null, 2);
 
-const filePath = path.join(__dirname, 'generated.json');
+const filePath = path.join(__dirname, 'productData.json');
 
 fs.writeFileSync(filePath, jsonContent, 'utf-8');
 
 console.log(`${filePath} 파일이 생성되었습니다.`);
-
-// console.log(fakeData);

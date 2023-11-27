@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import getStaticPath from '../utils/getStaticPath';
 import readFileAsync from '../utils/readFileAsync';
-import { IProduct } from '../static/data/fakeData';
+import { IProduct } from '../static/data/productData';
 
 @Injectable()
 export class PricesService {
   async getLocalPrice({ product }: { product?: string }) {
-    const filePath = getStaticPath('/data/generated.json');
+    const filePath = getStaticPath('/data/productData.json');
 
     if (product === undefined) {
       return {
@@ -15,18 +15,9 @@ export class PricesService {
       };
     }
 
-    // const productData = fakeData.find((element) => element.name === product);
-    // if (productData === undefined) {
-    //   return { ok: false, error: `${product}에 대한 상품 정보가 없습니다.` };
-    // }
-
-    // return { ok: true, data: productData };
-
     try {
       const fileContent = await readFileAsync(filePath);
       const fakeDB = JSON.parse(fileContent.toString()) as IProduct[];
-
-      console.log(fakeDB);
 
       const productData = fakeDB.find((element) => element.name === product);
       if (productData === undefined) {

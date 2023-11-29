@@ -1,6 +1,11 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
+// 이 파일은 개발을 할 때 사용하기 위한 가짜 데이터를 생성하기 위한 것입니다.
+// 이 코드를 실행시키면 같은 경로 위치에 'productData.json'이 생성됩니다.
+// 각 itemName에 각 region에 랜덤 가격이 부여됩니다.
+// production에서는 이 파일을 실행시킬 필요가 없습니다.
+
 interface IPrices {
   충청남도: number;
   공주시: number;

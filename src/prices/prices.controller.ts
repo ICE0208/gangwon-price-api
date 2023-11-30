@@ -5,9 +5,9 @@ import { ApiTags } from '@nestjs/swagger';
 @Controller('prices')
 @ApiTags('prices')
 export class PricesController {
-  constructor(private readonly usersService: PricesService) {}
+  constructor(private readonly pricesService: PricesService) {}
   @Get()
   getLocalPrice(@Query('product') product: string) {
-    return this.usersService.getLocalPrice({ product });
+    return this.pricesService.getLocalPrice({ product });
   }
 }

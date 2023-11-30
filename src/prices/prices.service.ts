@@ -25,11 +25,11 @@ export class PricesService {
       // 파일을 불러와 JSON으로 파싱하면 IProduct 배열 나와야합니다.
       // 이 결과값인 배열을 fakeDB 변수에 저장합니다.
       const fileContent = await readFileAsync(filePath);
-      const fakeDB = JSON.parse(fileContent.toString()) as IProduct[];
+      const data = JSON.parse(fileContent.toString()) as IProduct[];
 
       // 데이터에 product가 있는지 찾습니다.
       // 성공 시 찾은 데이터를 리턴하고 실패하면 'ok: false'와 함께 리턴합니다.
-      const productData = fakeDB.find((element) => element.name === product);
+      const productData = data.find((element) => element.name === product);
       if (productData === undefined) {
         return { ok: false, error: `${product}에 대한 상품 정보가 없습니다.` };
       }

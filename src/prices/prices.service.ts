@@ -5,7 +5,7 @@ import { IProduct } from '../static/data/productData';
 
 @Injectable()
 export class PricesService {
-  // /prices?product={product} 경로를 함수입니다.
+  // /prices?product={product} 경로의 함수입니다.
   async getLocalPrice({ product }: { product?: string }) {
     // product 쿼리가 주어지지 않았을 때 조건입니다.
     // product 쿼리는 필수로 주어져야 하므로 'ok: false'와 함께 리턴합니다.

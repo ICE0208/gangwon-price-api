@@ -97,3 +97,33 @@ curl -X 'GET' \
 ## 프로젝트 시연 영상
 
 [🔗 시연 영상](https://github.com/ICE0208/gangwon-price-api/issues/7)
+
+## 로컬에서 실행해보기
+
+### 프로젝트 클론
+
+```bash
+git clone https://github.com/ICE0208/gangwon-price-api
+```
+
+### 프로젝트 폴더로 이동
+
+```bash
+cd gangwon-price-api
+```
+
+### 필요한 패키지 설치
+
+```bash
+npm install
+```
+
+### 프로젝트 실행
+
+```bash
+npm run start:dev
+```
+
+### 실행 확인
+
+`http://localhost:3000/api`로 접속하여 정상 작동 확인
